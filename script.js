@@ -1,11 +1,19 @@
-const containerElement = document.querySelector(".container");
+let containerElement = document.querySelector(".container");
 
-const gridContainer = document.createElement("div");
-gridContainer.style.cssText = "display: flex;";
+let gridContainer;
 
-containerElement.appendChild(gridContainer);
+for (let i = 1; i <= 16; i++) {
+  gridContainer = document.createElement("div");
+  gridContainer.style.cssText = "display: flex;";
+  containerElement.appendChild(gridContainer);
+}
 
-const gridElement = document.createElement("div");
-gridElement.classList.add("grid");
+let gridElement;
 
-gridContainer.appendChild(gridElement);
+containerElement.querySelectorAll("div").forEach((element) => {
+  for (let i = 1; i <= 16; i++) {
+    gridElement = document.createElement("div");
+    gridElement.classList.add("grid");
+    element.appendChild(gridElement);
+  }
+});
