@@ -37,10 +37,19 @@ let removeGridTable = () => {
   });
 };
 
+let getUpdateGridValue = () => {
+  let gridValue = parseInt(prompt("Input Grid value must less than 100"));
+  if (typeof gridValue === "number" && gridValue < 100) {
+    removeGridTable();
+    createGridTable(gridValue);
+  } else {
+    removeGridTable();
+    createGridTable();
+  }
+};
+
 const changeGridBtn = document.querySelector("div.btn");
 
 changeGridBtn.addEventListener("click", () => {
-  removeGridTable();
-  let gridValue = prompt("Input Grid value must less than 100");
-  createGridTable(gridValue);
+  getUpdateGridValue();
 });
