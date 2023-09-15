@@ -1,30 +1,31 @@
-let containerElement = document.querySelector(".container");
-
+let containerElement;
 let gridContainer;
-
-for (let i = 1; i <= 16; i++) {
-  gridContainer = document.createElement("div");
-  gridContainer.style.cssText = "display: flex;";
-  gridContainer.classList.add("gridcontainer");
-  containerElement.appendChild(gridContainer);
-}
-
 let gridElement;
+let everyGridContainer;
 
-let everyGridContainer = containerElement.querySelectorAll("div");
-
-everyGridContainer.forEach((element) => {
-  for (let i = 1; i <= 16; i++) {
-    gridElement = document.createElement("div");
-    gridElement.classList.add("grid");
-    element.appendChild(gridElement);
+let createGridTable = (grid = 16) => {
+  containerElement = document.querySelector(".container");
+  for (let i = 1; i <= grid; i++) {
+    gridContainer = document.createElement("div");
+    gridContainer.style.cssText = "display: flex;";
+    gridContainer.classList.add("gridcontainer");
+    containerElement.appendChild(gridContainer);
   }
-});
-
-let gridElementsSelector = document.querySelectorAll("div.grid");
-
-gridElementsSelector.forEach((element) => {
-  element.addEventListener("mouseover", () => {
-    element.style.cssText = "background: #FFC436;";
+  everyGridContainer = containerElement.querySelectorAll("div");
+  everyGridContainer.forEach((element) => {
+    for (let i = 1; i <= grid; i++) {
+      gridElement = document.createElement("div");
+      gridElement.classList.add("grid");
+      element.appendChild(gridElement);
+    }
   });
-});
+  let gridElementsSelector = document.querySelectorAll("div.grid");
+
+  gridElementsSelector.forEach((element) => {
+    element.addEventListener("mouseover", () => {
+      element.style.cssText = "background: #FFC436;";
+    });
+  });
+};
+
+createGridTable();
