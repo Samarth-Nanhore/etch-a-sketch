@@ -29,3 +29,10 @@ let createGridTable = (grid = 16) => {
 };
 
 createGridTable();
+
+let removeGridTable = () => {
+  let SelectGridContainers = document.querySelectorAll("div.gridcontainer");
+  SelectGridContainers.forEach((ele) => {
+    ele.remove();
+  });
+};
