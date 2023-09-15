@@ -36,3 +36,11 @@ let removeGridTable = () => {
     ele.remove();
   });
 };
+
+const changeGridBtn = document.querySelector("div.btn");
+
+changeGridBtn.addEventListener("click", () => {
+  removeGridTable();
+  let gridValue = prompt("Input Grid value must less than 100");
+  createGridTable(gridValue);
+});
