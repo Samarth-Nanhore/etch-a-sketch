@@ -4,7 +4,6 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
   box-sizing: border-box;
   font-family: "Open Sans", sans-serif;
 }
@@ -21,6 +20,7 @@ html {
   align-items: center;
   flex-direction: column;
   max-width: 960px;
+  overflow: hidden;
 }
 
 .btn {
